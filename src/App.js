@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as HashRouter, Route, Link } from 'react-router-dom';
 
 import Home from './components/Home';
 import Post from './components/Post';
@@ -7,7 +7,7 @@ import './App.scss';
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <div>
         <nav>
           <ul>
@@ -21,7 +21,7 @@ function App() {
       <Route path="/" exact component={Home} />
       <Route path="/post/:id" component={Post} />
 
-    </Router>
+    </HashRouter>
   );
 }
 
