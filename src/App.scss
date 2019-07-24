@@ -1,0 +1,183 @@
+$canvas_color: #f2f4e6;
+$post_background_color: #fdfff0;
+$main_text_color: #545452;
+$secondary_text_color: #989897;
+$primary_color: #7dd3b9;
+$link_color: #ff6868;
+
+html,
+body {
+  background-color: $canvas_color;
+  color: $main_text_color;
+}
+
+.container {
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+nav {
+  background-color: $primary_color;
+  min-height: 35px;
+  height: 5vh;
+
+  ul{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    list-style-type: none;
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  a {
+    color: $main_text_color;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+a {
+  color: $link_color;
+}
+
+ul.news-list {
+  list-style-type: none;
+}
+
+.post-item {
+  margin-bottom: 10px;
+  padding: 3px 0;
+  background-color: $post_background_color;
+  display: flex;
+  flex-direction: row;
+
+  .post-rank {
+    display: block;
+    margin: 0 5px;
+    font-size: 1.1em;
+    text-align: center;
+    color: $secondary_text_color;
+  }
+
+  .post-content {
+    flex: 1;
+    font-size: 0.9em;
+    h3 {
+      display: inline;
+      font-size: 1.2em;
+      word-break: normal;
+      overflow-wrap: anywhere;
+    }
+
+
+  }
+
+  .post-comment {
+    display: block;
+    font-size: 30px;
+    text-align: right;
+    padding-right: 20px;
+    width: 10%;
+    color: $main_text_color;
+  }
+
+  .post-domain {
+    color: $secondary_text_color;
+    display: block;
+  }
+
+  .post-comment:hover {
+    cursor: pointer;
+  }
+
+  .post-info {
+    span {
+      margin-right: 7px;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+  }
+
+}
+
+.post-item:hover {
+  .post-rank {
+    color: $main_text_color;
+  }
+}
+
+
+
+.top-comment {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #000;
+}
+
+.top-comment .comment {
+  margin-left: 10px;
+}
+
+.top-comment .comment-content {
+  padding-left: 10px;
+  overflow-x: scroll;
+}
+
+.ribbon-1 {
+  border-left: 3px solid rgb(77, 77, 253);
+}
+
+.ribbon-2 {
+  border-left: 3px solid rgb(255, 208, 0);
+}
+
+.ribbon-3 {
+  border-left: 3px solid yellowgreen;
+}
+
+.ribbon-4 {
+  border-left: 3px solid rgb(146, 57, 146);
+}
+
+.ribbon-5 {
+  border-left: 3px solid rgb(255, 128, 81);
+}
+
+.ribbon-6 {
+  border-left: 3px solid darkolivegreen;
+}
+
+.ribbon-7 {
+  border-left: 3px solid burlywood;
+}
+
+.ribbon-8 {
+  border-left: 3px solid palevioletred;
+}
+
+
+.comment-content {
+  margin-bottom: 5px;
+  background-color: $post_background_color;
+  padding: 10px;
+}
+
+.paging {
+  font-size: 1.3em;
+  text-align: center;
+
+  i:hover {
+    cursor: pointer;
+  }
+}
