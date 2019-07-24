@@ -7,7 +7,7 @@ import './App.scss';
 
 function App() {
   return (
-    <Router basename="/hnews">
+    <Router basename={process.env.PUBLIC_URL}>
       <div>
         <nav>
           <ul>
