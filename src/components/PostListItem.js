@@ -18,11 +18,11 @@ function PostListItem(props) {
                 </div>
             </div>
 
-            {!props.data.isPostTitle ?
+            {/* {!props.data.isPostTitle ?
                 <Link to={`/post/${props.data.id}`}>
                     <span className="post-comment"><i className="fa fa-comments"></i></span>
                 </Link>  : ''
-            }
+            } */}
 
         </div>
     );

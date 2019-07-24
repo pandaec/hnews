@@ -30,7 +30,7 @@ export default class Post extends React.Component {
     render() {
         return (
             <div className="container">
-                <PostListItem data={{ ...this.state, isPostTitle: true }} rank={0}></PostListItem>
+                <PostListItem data={{ ...this.state, isPostTitle: true }} rank={'*'}></PostListItem>
                 {this.state.comments.map((o, i) => <Comment key={o.id} data={o}></Comment>)}
             </div>
         );
