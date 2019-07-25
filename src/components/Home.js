@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import PostListItem from './PostListItem'
 import Paging from './Paging';
+import Spinner from './Spinner';
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -21,11 +22,16 @@ export default class Home extends React.Component {
     render() {
         return (
             <div className="container">
-                <ul className="news-list">
-                    {this.state.posts.map((o, i) => <li><PostListItem key={o.id} rank={30*(this.state.page-1) + i} data={o} history={this.props.history}></PostListItem></li>)}
-                </ul>
-
-                <Paging page={this.state.page} nextPage={this.nextPage.bind(this)} prevPage={this.prevPage.bind(this)}></Paging>
+                {this.state.posts.length > 0 ?
+                    <div>
+                        <ul className="news-list">
+                            {this.state.posts.map((o, i) => <li><PostListItem key={o.id} rank={30 * (this.state.page - 1) + i} data={o} history={this.props.history}></PostListItem></li>)}
+                        </ul>
+                        <Paging page={this.state.page} nextPage={this.nextPage.bind(this)} prevPage={this.prevPage.bind(this)}></Paging>
+                    </div>
+                    :
+                    <Spinner />
+                }
             </div>
         );
     }
