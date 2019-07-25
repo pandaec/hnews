@@ -6,7 +6,15 @@ function PostListItem(props) {
         <div className="post-item">
             <span className="post-rank">{props.rank}</span>
             <div className="post-content">
-                <a href={props.data.url} target="_blank" rel="noopener noreferrer"><h3>{props.data.title}</h3></a>
+                { props.data.type === 'link' ? 
+                    <a href={props.data.url} target="_blank" rel="noopener noreferrer">
+                        <h3>{props.data.title}</h3>
+                    </a>
+                    :
+                    <Link to={`/post/${props.data.id}`}>
+                        <h3>{props.data.title}</h3>
+                    </Link>
+                }
                 <span className="post-domain">{props.data.domain}</span>
                 <div className="post-info">
                     <span><i className="fa fa-user" ></i>{props.data.user}</span>
