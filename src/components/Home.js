@@ -23,7 +23,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <div className="page-container">
-                <NavBar title="HW News"/>
+                <NavBar title="HW News" refreshPage={this.fetchNewPage.bind(this)} />
                 <div className="container">
                     {this.state.posts.length > 0 ?
                         <div>
@@ -59,6 +59,10 @@ export default class Home extends React.Component {
     }
 
     fetchNewPage() {
+        this.setState({
+            posts: [],
+        });
+
         axios.get('https://node-hnapi.herokuapp.com/news', {
             params: {
                 page: this.state.page,

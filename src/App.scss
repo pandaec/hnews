@@ -47,19 +47,31 @@ nav {
     height: 100%;
     font-size: 1.3em;
     color: $main_text_color;
+    position: relative;
 
     .nav-back {
-      display: inline-block;
+      position: absolute;
       width: 30px;
       font-size: 1.7em;
-      margin-right: 5px;
-      position: absolute;
       cursor: pointer;
+      left: 0;
+    }
+
+    .nav-refresh {
+      position: absolute;
+      width: 30px;
+      font-size: 1.7em;
+      cursor: pointer;
+      right: 0;
     }
 
     .nav-title {
-      margin: 0 37px;
+      position: absolute;
+      left: 0;
+      width: calc(100% - 35px - 35px);
       height: 100%;
+      left: 50%;
+      transform: translateX(-50%);
 
       display: flex;
       justify-content: center;
