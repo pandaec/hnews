@@ -169,6 +169,22 @@ ul.news-list {
   overflow-x: auto;
 }
 
+@keyframes slidein {
+  from {
+    transform: translate(-50%);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+.comment,
+.top-comment {
+  animation: 0.5s slidein;
+}
+
+
 .ribbon-1 {
   border-left: 3px solid rgb(77, 77, 253);
 }
