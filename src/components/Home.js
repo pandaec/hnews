@@ -22,7 +22,7 @@ export default class Home extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="page-container">
                 <NavBar title="HW News"/>
                 <div className="container">
                     {this.state.posts.length > 0 ?

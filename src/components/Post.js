@@ -31,7 +31,7 @@ export default class Post extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="page-container">
                 <NavBar title={this.state.title} history={this.props.history}/>
                 <div className="container">
                     {
