@@ -3,6 +3,7 @@ import axios from 'axios';
 import Comment from './Comment';
 import PostListItem from './PostListItem';
 import Spinner from './Spinner';
+import NavBar from './Navbar';
 
 
 export default class Post extends React.Component {
@@ -30,16 +31,19 @@ export default class Post extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                {
-                    this.state.comments.length > 0 ?
-                        <div>
-                            <PostListItem data={{ ...this.state, isPostTitle: true }} rank={'*'}></PostListItem>
-                            {this.state.comments.map((o, i) => <Comment key={o.id} data={o}></Comment>)}
-                        </div>
-                        :
-                        <Spinner />
-                }
+            <div>
+                <NavBar title={this.state.title} history={this.props.history}/>
+                <div className="container">
+                    {
+                        this.state.comments.length > 0 ?
+                            <div>
+                                <PostListItem data={{ ...this.state, isPostTitle: true }} rank={'*'}></PostListItem>
+                                {this.state.comments.map((o, i) => <Comment key={o.id} data={o}></Comment>)}
+                            </div>
+                            :
+                            <Spinner />
+                    }
+                </div>
             </div>
         );
     }
