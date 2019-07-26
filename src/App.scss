@@ -169,6 +169,19 @@ ul.news-list {
   overflow-x: auto;
 }
 
+.no-comment {
+  background-color: $post_background_color;
+  height: 60px;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    padding-left: 5px;
+  }
+}
+
 @keyframes slidein {
   from {
     transform: translate(-50%);

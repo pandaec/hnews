@@ -32,13 +32,22 @@ export default class Post extends React.Component {
     render() {
         return (
             <div className="page-container">
-                <NavBar title={this.state.title} history={this.props.history}/>
+                <NavBar title={this.state.title} history={this.props.history} />
                 <div className="container">
                     {
-                        this.state.comments.length > 0 ?
+                        this.state.id ?
                             <div>
                                 <PostListItem data={{ ...this.state, isPostTitle: true }} rank={'*'}></PostListItem>
-                                {this.state.comments.map((o, i) => <Comment key={o.id} data={o}></Comment>)}
+                                {
+                                    this.state.comments.length > 0 ?
+                                        this.state.comments.map((o, i) => <Comment key={o.id} data={o}></Comment>)
+                                        :
+                                        <div className="no-comment">
+                                            <span>
+                                                No comments
+                                            </span>
+                                        </div>
+                                }
                             </div>
                             :
                             <Spinner />
